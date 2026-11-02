@@ -4,60 +4,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MFA Defender</title>
+    <title>MFA Defender | CYBER//DEFENSE</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="game-container">
-        <header>
-            <h1>MFA<span> DEFENDER</span></h1>
-            <p>DEFEND YOUR DIGITAL WORLD</p>
-        </header>
+    <header>
+        <h1>CYBER<span>//</span>DEFENSE</h1>
+        <p>DEFEND YOUR DIGITAL WORLD.</p>
+    </header>
 
-        <div class="stats">
-            <div>Score: <span id="score">0</span></div>
-            <div>Lives: <span id="lives">3</span></div>
-            <div>Wave: <span id="wave">1</span>/5</div>
-            <div>Defense: <span id="defense">0</span>%</div>
-        </div>
+    <main>
+        <section id="gameContainer">
 
-        <div class="game-area">
-            <canvas id="gameCanvas" width="800" height="450"></canvas>
+            <div id="startScreen" class="screen">
+                <h1>MFA DEFENDER</h1>
+                <p class="subtitle">YOUR PASSWORD ISN'T ENOUGH.</p>
 
-            <div id="startScreen" class="overlay">
-                <h2>ACCOUNT UNDER ATTACK</h2>
-                <p>Hackers are trying to access your account.</p>
-                <p>Destroy the threats and answer MFA questions to power up!</p>
-                <button id="startButton">START MISSION</button>
+                <div class="mfa-tutorial">
+                    <h2>HOW TO PLAY</h2>
+
+                    <p>
+                        Hackers are trying to break into your account!
+                        Your password is your first layer of protection,
+                        but passwords alone are not always enough.
+                    </p>
+
+                    <p>
+                        <strong>Multifactor Authentication (MFA)</strong>
+                        adds another verification step to help protect
+                        your account, even if someone knows your password.
+                    </p>
+
+                    <h3>YOUR MISSION</h3>
+
+                    <ul>
+                        <li>Move using A/D or the arrow keys.</li>
+                        <li>Press SPACE to shoot incoming hackers.</li>
+                        <li>Collect the green A for an authenticator app.</li>
+                        <li>Collect the blue K for a security key.</li>
+                        <li>Activate MFA to unlock extra defenses.</li>
+                        <li>Press E to use your MFA defensive pulse.</li>
+                        <li>Answer security questions between waves.</li>
+                        <li>Defeat the final boss!</li>
+                    </ul>
+
+                    <p>
+                        <strong>Remember:</strong> A password is only
+                        your first line of defense. Add another factor
+                        to make your account more secure!
+                    </p>
+                </div>
+
+                <button id="startButton">START GAME</button>
             </div>
 
-            <div id="quizScreen" class="overlay hidden">
-                <h2 id="questionTitle">CYBERSECURITY CHECKPOINT</h2>
+            <div id="quizScreen" class="screen hidden">
+                <h2 id="questionTitle">MFA SECURITY CHECKPOINT</h2>
                 <p id="question"></p>
                 <div id="answers"></div>
                 <p id="feedback"></p>
                 <button id="continueButton" class="hidden">CONTINUE</button>
             </div>
 
-            <div id="endScreen" class="overlay hidden">
-                <h2 id="endTitle">MISSION COMPLETE</h2>
+            <div id="endScreen" class="screen hidden">
+                <h1 id="endTitle"></h1>
                 <p id="endMessage"></p>
                 <button id="restartButton">PLAY AGAIN</button>
             </div>
-        </div>
 
-        <div class="instructions">
-            <p><strong>CONTROLS:</strong> A/D or arrow keys to move | SPACE to shoot</p>
-            <p>Destroy enemies, answer questions, and earn power-ups!</p>
-        </div>
+            <div id="gameHUD">
+                <div class="stat">
+                    <span>SCORE</span>
+                    <strong id="score">0</strong>
+                </div>
 
-        <div class="powerup-info">
-            <h3>POWER-UPS</h3>
-            <p>Correct answers unlock shields, extra lives, and rapid fire.</p>
-            <p id="powerupStatus">No power-ups earned yet.</p>
-        </div>
-    </div>
+                <div class="stat">
+                    <span>LIVES</span>
+                    <strong id="lives">5</strong>
+                </div>
+
+                <div class="stat">
+                    <span>WAVE</span>
+                    <strong id="wave">1</strong>
+                </div>
+
+                <div class="stat">
+                    <span>MFA DEFENSE</span>
+                    <strong id="defense">0</strong>
+                </div>
+            </div>
+
+            <canvas id="gameCanvas" width="600" height="450"></canvas>
+
+            <p id="powerupStatus">
+                PASSWORD ONLY: Find a second verification factor!
+            </p>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>CYBER//DEFENSE | CYBERSECURITY AWARENESS MONTH</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
