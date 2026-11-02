@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MFA Defender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <header>
+            <h1>MFA<span> DEFENDER</span></h1>
+            <p>DEFEND YOUR DIGITAL WORLD</p>
+        </header>
+
+        <div class="stats">
+            <div>Score: <span id="score">0</span></div>
+            <div>Lives: <span id="lives">3</span></div>
+            <div>Wave: <span id="wave">1</span>/5</div>
+            <div>Defense: <span id="defense">0</span>%</div>
+        </div>
+
+        <div class="game-area">
+            <canvas id="gameCanvas" width="800" height="450"></canvas>
+
+            <div id="startScreen" class="overlay">
+                <h2>ACCOUNT UNDER ATTACK</h2>
+                <p>Hackers are trying to access your account.</p>
+                <p>Destroy the threats and answer MFA questions to power up!</p>
+                <button id="startButton">START MISSION</button>
+            </div>
+
+            <div id="quizScreen" class="overlay hidden">
+                <h2 id="questionTitle">CYBERSECURITY CHECKPOINT</h2>
+                <p id="question"></p>
+                <div id="answers"></div>
+                <p id="feedback"></p>
+                <button id="continueButton" class="hidden">CONTINUE</button>
+            </div>
+
+            <div id="endScreen" class="overlay hidden">
+                <h2 id="endTitle">MISSION COMPLETE</h2>
+                <p id="endMessage"></p>
+                <button id="restartButton">PLAY AGAIN</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <p><strong>CONTROLS:</strong> A/D or arrow keys to move | SPACE to shoot</p>
+            <p>Destroy enemies, answer questions, and earn power-ups!</p>
+        </div>
+
+        <div class="powerup-info">
+            <h3>POWER-UPS</h3>
+            <p>Correct answers unlock shields, extra lives, and rapid fire.</p>
+            <p id="powerupStatus">No power-ups earned yet.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
